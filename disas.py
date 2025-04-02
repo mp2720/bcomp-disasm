@@ -186,12 +186,12 @@ def disas_instr(cur_addr: int, word: int) -> tuple[Instr, int | None]:
     def branch() -> tuple[AddrOrImmInstr, int] | None:
         ext_opcode = (other & 0b111100000000) >> 8
         mnemonics = {
-            0: "BEQ",
-            1: "BNE",
-            2: "BMI",
-            3: "BPL",
-            4: "BHIS",
-            5: "BLO",
+            0: "BZS",
+            1: "BZC",
+            2: "BNS",
+            3: "BNC",
+            4: "BCS",
+            5: "BCC",
             6: "BVS",
             7: "BVC",
             8: "BLT",
